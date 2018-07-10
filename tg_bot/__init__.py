@@ -111,7 +111,6 @@ for i in support_list:
     temp = i['user_id']
     SUPPORT_USERS.add(temp)
 
-
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 SUDO_USERS = list(SUDO_USERS)
