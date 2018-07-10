@@ -106,13 +106,6 @@ for i in sudo_list:
     temp = i['user_id']
     SUDO_USERS.add(temp)
 
-SUPPORT_USERS.add(SUPPORT_USERS)
-import tg_bot.modules.sql.gsupport_sql as gsupport_sql
-support_list = gsupport_sql.get_support_list()
-for i in support_list:
-    temp = i['user_id']
-    SUPPORT_USERS.add(temp)
-
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 SUDO_USERS = list(SUDO_USERS)
