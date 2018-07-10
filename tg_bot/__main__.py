@@ -16,7 +16,7 @@ from tg_bot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, DONATION_LINK,
 from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
-
+import tg_bot.modules.sql.gpromote_sql as gpromote_sql
 PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help - and then head to @MarieSupport.
 
@@ -103,6 +103,9 @@ for module_name in ALL_MODULES:
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
 
+sudo_list = gpromote_sql.get_sudo_list()
+for i in sudo_list:
+   Config.SUDO_USERS.append(i)
 
 # do not async
 def send_help(chat_id, text, keyboard=None):
