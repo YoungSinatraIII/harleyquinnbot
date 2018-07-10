@@ -106,7 +106,7 @@ for i in sudo_list:
     temp = i['user_id']
     SUDO_USERS.add(temp)
 import tg_bot.modules.sql.gsupport_sql as gsupport_sql
-support_list = gsupport_sql.get_sudo_list()
+support_list = gsupport_sql.get_support_list()
 for i in support_list:
     temp = i['user_id']
     SUPPORT_USERS.add(temp)
